@@ -1,0 +1,8 @@
+/exec_coremidi++
+
+/.cache/
+
+/source/**/*.d
+/source/**/*.o
+
+/compile_commands.json
