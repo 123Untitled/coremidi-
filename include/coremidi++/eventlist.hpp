@@ -5,7 +5,7 @@
 
 #if defined(COREMIDI_PLUS_PLUS)
 
-#include "coremidi++/endpoint.hpp"
+#include "coremidi++/source.hpp"
 #include "coremidi++/types.hpp"
 
 #include <vector>
@@ -68,7 +68,7 @@ namespace coremidi {
 			// -- public modifiers --------------------------------------------
 
 			/* send */
-			auto send(const coremidi::endpoint&) -> void;
+			auto send(const coremidi::source&) -> void;
 
 			/* note on */
 			auto note_on(const coremidi::u8,

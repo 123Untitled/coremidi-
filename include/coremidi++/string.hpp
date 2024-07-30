@@ -8,6 +8,12 @@
 #include <CoreFoundation/CoreFoundation.h>
 
 
+// -- forward declarations ----------------------------------------------------
+
+namespace coremidi {
+	class object;
+}
+
 // -- C O R E F O U N D A T I O N  N A M E S P A C E --------------------------
 
 namespace corefoundation {
@@ -16,6 +22,12 @@ namespace corefoundation {
 	// -- S T R I N G ---------------------------------------------------------
 
 	class string final {
+
+
+		// -- friends ---------------------------------------------------------
+
+		/* object as friend */
+		friend class coremidi::object;
 
 
 		private:
@@ -73,6 +85,14 @@ namespace corefoundation {
 				if (_string == nullptr)
 					return;
 				::CFRelease(_string);
+			}
+
+
+			// -- public accessors --------------------------------------------
+
+			/* length */
+			auto length(void) const -> ::CFIndex {
+				return ::CFStringGetLength(_string);
 			}
 
 

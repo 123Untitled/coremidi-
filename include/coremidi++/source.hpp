@@ -1,12 +1,16 @@
-#ifndef ___COREMIDI_PLUS_PLUS_CLIENT_HPP___
-#define ___COREMIDI_PLUS_PLUS_CLIENT_HPP___
+#ifndef ___COREMIDI_PLUS_PLUS_SOURCE_HPP___
+#define ___COREMIDI_PLUS_PLUS_SOURCE_HPP___
 
 #include "coremidi++/os.hpp"
 
 #if defined(COREMIDI_PLUS_PLUS)
 
 #include "coremidi++/object.hpp"
-#include <CoreMIDI/CoreMIDI.h>
+#include "coremidi++/client.hpp"
+#include "coremidi++/types.hpp"
+
+#include <iostream>
+
 
 
 // -- C O R E M I D I  N A M E S P A C E --------------------------------------
@@ -14,9 +18,9 @@
 namespace coremidi {
 
 
-	// -- C L I E N T ---------------------------------------------------------
+	// -- S O U R C E ---------------------------------------------------------
 
-	class client final : public coremidi::object {
+	class source final : public coremidi::object {
 
 
 		private:
@@ -24,7 +28,7 @@ namespace coremidi {
 			// -- private types -----------------------------------------------
 
 			/* self type */
-			using ___self = coremidi::client;
+			using ___self = coremidi::source;
 
 
 		public:
@@ -32,19 +36,19 @@ namespace coremidi {
 			// -- public lifecycle --------------------------------------------
 
 			/* default constructor */
-			client(void) noexcept = default;
+			source(void) noexcept = default;
 
 			/* name constructor */
-			client(const char*);
+			source(const coremidi::client&, const char*);
 
 			/* deleted copy constructor */
-			client(const ___self&) = delete;
+			source(const ___self&) = delete;
 
 			/* move constructor */
-			client(___self&&) noexcept;
+			source(___self&&) noexcept;
 
 			/* destructor */
-			~client(void) noexcept;
+			~source(void) noexcept;
 
 
 			// -- public assignment operators ---------------------------------
@@ -53,7 +57,7 @@ namespace coremidi {
 			auto operator=(const ___self&) -> ___self& = delete;
 
 			/* move assignment operator */
-			auto operator=(___self&&) noexcept -> ___self&;
+			auto operator=(___self&& other) noexcept -> ___self&;
 
 
 		private:
@@ -63,16 +67,10 @@ namespace coremidi {
 			/* dispose */
 			auto _dispose(void) noexcept -> void;
 
-
-			// -- private static methods --------------------------------------
-
-			/* _notification */
-			static auto _notification(const ::MIDINotification*, void*) noexcept -> void;
-
-	}; // class client
+	}; // class source
 
 } // namespace coremidi
 
-#endif // MSH_APPLE
+#endif // COREMIDI_PLUS_PLUS
 
-#endif // ___MSH_MIDI_CLIENT_HPP___
+#endif // ___COREMIDI_PLUS_PLUS_SOURCE_HPP___

@@ -17,7 +17,7 @@ coremidi::eventlist::eventlist(void)
 }
 
 
-auto coremidi::eventlist::send(const coremidi::endpoint& source) -> void {
+auto coremidi::eventlist::send(const coremidi::source& source) -> void {
 
 	// check packet validity
 	if (_packet == nullptr)

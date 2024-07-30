@@ -66,7 +66,7 @@ auto coremidi::port::operator=(___self&& other) -> ___self& {
 // -- public methods ----------------------------------------------------------
 
 /* connect */
-auto coremidi::port::connect(const coremidi::endpoint& ep) -> void {
+auto coremidi::port::connect(const coremidi::destination& ep) -> void {
 
 	// connect endpoint to port
 	::OSStatus status = ::MIDIPortConnectSource(_port, ep.id(), nullptr);
@@ -76,7 +76,7 @@ auto coremidi::port::connect(const coremidi::endpoint& ep) -> void {
 }
 
 /* disconnect */
-auto coremidi::port::disconnect(const coremidi::endpoint& ep) -> void {
+auto coremidi::port::disconnect(const coremidi::destination& ep) -> void {
 
 	// disconnect endpoint from port
 	::OSStatus status = ::MIDIPortDisconnectSource(_port, ep.id());

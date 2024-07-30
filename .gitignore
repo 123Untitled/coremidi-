@@ -6,3 +6,7 @@
 /source/**/*.o
 
 /compile_commands.json
+
+/libcoremidi++.a
+/libcoremidi++.so
+/libcoremidi++.dylib

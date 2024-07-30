@@ -9,7 +9,7 @@
 /* default constructor */
 msh::midi::server::server(void)
 : _client{"msh midi client"},
-  _source{coremidi::make_source(_client, "msh")},
+  _source{_client, "msh"},
   _port{_client, "msh port"} {
 
 	setup_server();

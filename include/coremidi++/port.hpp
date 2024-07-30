@@ -6,7 +6,8 @@
 #if defined(COREMIDI_PLUS_PLUS)
 
 #include "coremidi++/client.hpp"
-#include "coremidi++/endpoint.hpp"
+#include "coremidi++/source.hpp"
+#include "coremidi++/destination.hpp"
 
 
 // -- C O R E M I D I  N A M E S P A C E --------------------------------------
@@ -59,10 +60,10 @@ namespace coremidi {
 			// -- public methods ----------------------------------------------
 
 			/* connect */
-			auto connect(const coremidi::endpoint&) -> void;
+			auto connect(const coremidi::destination&) -> void;
 
 			/* disconnect */
-			auto disconnect(const coremidi::endpoint&) -> void;
+			auto disconnect(const coremidi::destination&) -> void;
 
 
 		private:

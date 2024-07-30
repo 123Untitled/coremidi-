@@ -6,7 +6,7 @@
 #if defined(COREMIDI_PLUS_PLUS)
 
 #include "coremidi++/client.hpp"
-#include "coremidi++/endpoint.hpp"
+#include "coremidi++/source.hpp"
 #include "coremidi++/eventlist.hpp"
 #include "coremidi++/output_port.hpp"
 
@@ -130,7 +130,7 @@ namespace msh {
 				coremidi::client _client;
 
 				/* source */
-				coremidi::endpoint _source;
+				coremidi::source _source;
 
 				/* port */
 				coremidi::port::output _port;

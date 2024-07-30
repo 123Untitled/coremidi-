@@ -4,6 +4,13 @@
 
 #include <CoreMIDI/CoreMIDI.h>
 
+namespace cm {
+
+	using object_ref = ::MIDIObjectRef;
+
+	using os_status = ::OSStatus;
+
+} // namespace cm
 
 namespace coremidi {
 

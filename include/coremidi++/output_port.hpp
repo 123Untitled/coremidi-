@@ -8,7 +8,8 @@
 
 #include "coremidi++/string.hpp"
 #include "coremidi++/client.hpp"
-#include "coremidi++/endpoint.hpp"
+#include "coremidi++/destination.hpp"
+#include "coremidi++/source.hpp"
 
 
 // -- C O R E M I D I  N A M E S P A C E --------------------------------------
@@ -116,7 +117,7 @@ namespace coremidi {
 				// -- public modifiers ----------------------------------------
 
 				/* connect */
-				auto connect(const coremidi::endpoint& ep) -> void {
+				auto connect(const coremidi::destination& ep) -> void {
 
 					// connect endpoint to port
 					::OSStatus status = ::MIDIPortConnectSource(_port, ep.id(), nullptr);
@@ -126,7 +127,7 @@ namespace coremidi {
 				}
 
 				/* disconnect */
-				auto disconnect(const coremidi::endpoint& ep) -> void {
+				auto disconnect(const coremidi::destination& ep) -> void {
 
 					// disconnect endpoint from port
 					::OSStatus status = ::MIDIPortDisconnectSource(_port, ep.id());
